@@ -26,7 +26,11 @@ public sealed partial class TeamAppearanceSystem : EntitySystem
             return;
 
         var teamProto = ProtoMan.Index(ent.Comp.CurrentTeam.Value);
-        var iconProto = ProtoMan.Index(teamProto.TeamIcon);
+
+        if (teamProto.TeamIcon is null)
+            return;
+
+        var iconProto = ProtoMan.Index(teamProto.TeamIcon.Value);
 
         args.StatusIcons.Add(iconProto);
     }

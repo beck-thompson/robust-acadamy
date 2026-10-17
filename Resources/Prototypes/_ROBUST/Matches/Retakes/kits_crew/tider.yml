@@ -1,0 +1,141 @@
+- type: startingGear
+  id: RetakesTidergearArmory1
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    back: ClothingBackpackSatchel
+    head: ClothingHeadHelmetBasic
+    eyes: ClothingEyesHudMedical
+    mask: ClothingMaskGas
+    ears: ClothingHeadsetGrey
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingOuterArmorBulletproof
+    shoes: ClothingShoesBootsMag
+    id: PassengerPDA
+    pocket1: EmergencyMedipen
+    pocket2: EmergencyOxygenTankFilled
+    belt: ClothingBeltUtilityEngineering
+  storage:
+    back:
+    - MagazinePistolSubMachineGunIncendiary
+    - MagazinePistolSubMachineGun
+    - MagazinePistolSubMachineGun
+    - GrenadeStinger
+    - SecurityBola
+    - HoloprojectorSecurity
+  inhand:
+  - WeaponSubMachineGunDrozd
+
+- type: entity
+  parent: MobHuman
+  id: UrstRetakesArmory1
+  components:
+  - type: Loadout
+    prototypes:
+    - RetakesTidergearArmory1
+
+- type: robustKit
+  id: UrstRetakesArmoryKit1
+  name: Tider armory kit 1
+  description: armory kit 1
+  kit: UrstRetakesArmory1
+
+# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
+
+- type: startingGear
+  id: RetakesTidergearArmory2
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    back: ClothingBackpackSatchel
+    head: ClothingHeadHatWelding
+    mask: ClothingMaskGas
+    ears: ClothingHeadsetGrey
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingOuterArmorBasicSlim
+    shoes: ClothingShoesGaloshes
+    id: PassengerPDA
+    pocket1: CrazyGlue
+    pocket2: EmergencyOxygenTankFilled
+    belt: ClothingBeltQuiver
+  storage:
+    back:
+    - ChemistryBottleUnstableMutagen
+    - ChemistryBottleUnstableMutagen
+    - CrazyGlue
+    - SecurityBola
+    - MetalFoamGrenade
+    - CleanerGrenade
+    - ArrowImprovisedPlasma
+    - ArrowImprovisedPlasma
+    - ArrowImprovisedPlasma
+    - ArrowImprovisedPlasma
+    - ArrowImprovisedPlasma
+    - ArrowImprovisedPlasma
+    - ArrowImprovisedPlasma
+    - ArrowImprovisedPlasma
+    - ArrowImprovisedPlasma
+    - ArrowImprovisedPlasma
+  inhand:
+  - BowImprovised
+  - SpearUranium
+
+- type: entity
+  parent: MobHuman
+  id: UrstRetakesArmory2
+  components:
+  - type: Loadout
+    prototypes:
+    - RetakesTidergearArmory2
+
+- type: robustKit
+  id: UrstRetakesArmoryKit2
+  name: Tider armory kit 2
+  description: armory kit 2
+  kit: UrstRetakesArmory2
+
+
+# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
+
+
+- type: startingGear
+  id: RetakesTidergearArmory3
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorGrey
+    back: ClothingBackpackSatchel
+    head: ClothingHeadHatWelding
+    mask: ClothingMaskWeldingGas
+    ears: ClothingHeadsetGrey
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingOuterArmorBasicSlim
+    shoes: ClothingShoesBootsSpeed
+    id: PassengerPDA
+    pocket1: EmergencyMedipen
+    pocket2: EmergencyOxygenTankFilled
+    belt: ClothingBeltUtilityEngineering
+  storage:
+    back:
+    - HoloprojectorField
+    - WeaponForceGun
+    - PortableRecharger
+    - PowerCellHyper
+    - PowerCellHyper
+  inhand:
+  - WeaponXrayCannon
+  - WeaponLaserCannon
+
+- type: entity
+  parent: MobHuman
+  id: UrstRetakesArmory3
+  components:
+  - type: Loadout
+    prototypes:
+    - RetakesTidergearArmory3
+
+- type: robustKit
+  id: UrstRetakesArmoryKit3
+  name: Tider armory kit 3
+  description: armory kit 3
+  kit: UrstRetakesArmory3
+
+
+# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
+

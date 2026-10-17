@@ -1,0 +1,87 @@
+- type: startingGear
+  id: RetakesSecGearStun1
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSec
+    back: ClothingBackpackSatchelSecurity
+    head: ClothingHeadHelmetBasic
+    eyes: ClothingEyesGlassesSecurity
+    mask: ClothingMaskGasSecurity
+    ears: ClothingHeadsetSecurity
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingOuterHardsuitSecurity
+    shoes: ClothingShoesBootsJack
+    id: SecurityPDA
+    pocket1: EmergencyMedipen
+    pocket2: EmergencyOxygenTankFilled
+    belt: ClothingBeltSecurityFilled
+  storage:
+    back:
+    - MagazineRifleIncendiary
+    - MagazineRifleIncendiary
+    - MagazineRifleUranium
+    - MagazineRifle
+    - Crowbar
+    - FlashlightSeclite
+    - MedkitFilled
+  inhand:
+  - WeaponRifleLecter
+
+- type: entity
+  parent: MobHuman
+  id: UrstRetakesSecGearStun1
+  components:
+  - type: Loadout
+    prototypes:
+    - RetakesSecGearStun1
+
+- type: robustKit
+  id: RobustKitSecStun
+  name: Basic secoff (stun)
+  description: A basic secoff kit with stun weapons
+  kit: UrstRetakesSecGearStun1
+
+# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
+
+- type: startingGear
+  id: RetakesSecGearStun2
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSec
+    back: ClothingBackpackSatchelSecurity
+    head: ClothingHeadHelmetBasic
+    eyes: ClothingEyesGlassesSecurity
+    mask: ClothingMaskGasSecurity
+    ears: ClothingHeadsetSecurity
+    gloves: ClothingHandsGlovesColorBlack
+    outerClothing: ClothingOuterArmorBulletproof
+    shoes: ClothingShoesBootsJack
+    id: SecurityPDA
+    pocket1: EmergencyMedipen
+    pocket2: EmergencyOxygenTankFilled
+    belt: ClothingBeltSecurityFilled
+  storage:
+    back:
+    - WeaponDisablerSMG
+    - BoxBeanbag
+    - BoxBeanbag
+    - Crowbar
+    - GrenadeStinger
+    - GrenadeStinger
+    - SecurityBola
+    - SecurityBola
+    - FlashliteSeclite
+  inhand:
+  - WeaponShotgunEnforcerRubber
+
+- type: entity
+  parent: MobHuman
+  id: UrstRetakesSecGearStun2
+  components:
+  - type: Loadout
+    prototypes:
+    - RetakesSecGearStun2
+
+- type: robustKit
+  id: RobustKitSecStun2
+  name: Basic secoff (stun)
+  description: A basic secoff kit with stun weapons
+  kit: UrstRetakesSecGearStun2

@@ -74,7 +74,6 @@ public sealed partial class ChooseTeams : IPhase
             teamComp.Teams.Add(team.Key, new List<ICommonSession>());
         }
 
-
         List<ICommonSession> addedPlayers = [];
 
         // Match players to their teams (if possible).

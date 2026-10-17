@@ -1,0 +1,19 @@
+- type: entity
+  name: match spawn (crew)
+  id: MatchSpawnPointCrew
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    state: blue
+  - type: MatchSpawnPoint
+    forceTeam: CrewTeam
+
+- type: entity
+  name: match spawn (nukie)
+  id: MatchSpawnPointNukies
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    state: red
+  - type: MatchSpawnPoint
+    forceTeam: NukieTeam

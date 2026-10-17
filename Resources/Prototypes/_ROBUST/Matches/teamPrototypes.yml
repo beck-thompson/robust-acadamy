@@ -42,3 +42,11 @@
   isShaded: true
   priority: 0
   locationPreference: Right
+
+- type: team
+  id: NukieTeam
+  teamName: "Nukies"
+
+- type: team
+  id: CrewTeam
+  teamName: "Crew"

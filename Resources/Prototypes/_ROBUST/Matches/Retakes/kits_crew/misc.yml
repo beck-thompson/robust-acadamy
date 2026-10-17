@@ -1,0 +1,38 @@
+- type: entity
+  parent: ArrowImprovised
+  id: ArrowAmatoxin
+  components:
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Amatoxin
+        Quantity: 2
+
+- type: entity
+  id: ClothingBeltQuiverFilledAmatoxin
+  parent: ClothingBeltQuiver
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ArrowAmatoxin
+          amount: 16
+
+- type: entity
+  id: ClothingBeltUtilityFilledRetakes
+  parent: ClothingBeltUtility
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Crowbar
+        - id: Wrench
+        - id: Screwdriver
+        - id: Wirecutter
+        - id: Welder
+        - id: Multitool
+        - id: ClothingHatHeadWelding

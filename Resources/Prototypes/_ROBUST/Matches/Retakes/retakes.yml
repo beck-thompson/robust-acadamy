@@ -1,0 +1,63 @@
+# todo:
+# Dont allow starting another match when in a match.
+# When round start, freeze players for 5-10 seconds and make them peaceful - they can do anything besides attack and move.
+#   this is so they can equip items properly and stuff
+
+- type: entity
+  parent: BaseMatch
+  id: RetakeGamemode
+  components:
+  - type: Round # Todo remove this because it doesn't make sense but the debug stuff breaks without it.
+  - type: RetakesRound
+  - type: Match
+    matchPhases:
+      enum.MatchPhaseSection.Start:
+      - !type:CreateMapMap
+        mapPath: "Maps/_ROBUST/Maps/RetakesBox.yml"
+      - !type:BringPlayerBodiesToNullSpace
+      - !type:RetakesTeamSelection
+        teams:
+          NukieTeam: 2
+          CrewTeam: 6
+        nextPhase: enum.MatchPhaseSection.RoundStart
+      enum.MatchPhaseSection.RoundStart:
+      - !type:TransferMindsToGhosts
+      - !type:Wait
+        waitTime: 1s
+      - !type:RobustLoadoutAskForKits
+        kitTables:
+          NukieTeam:
+          - RobustRoleNukieOperative
+          - RobustRoleNukieOperative
+          - RobustRoleNukieOperative
+          - RobustRoleNukieOperative
+          - RobustRoleNukieOperative
+          - RobustRoleNukieOperative
+          - RobustRoleNukieOperative
+          - RobustRoleNukieOperative
+          CrewTeam:
+          - RobustRoleCrewCommand
+          - RobustRoleCrewCommand
+          - RobustRoleCrewSecurity
+          - RobustRoleCrewSecurity
+          - RobustRoleCrewSecurity
+          - RobustRoleCrewTider
+          - RobustRoleCrewTider
+      - !type:Wait
+        waitTime: 1s
+      - !type:RetakesSpawnPlayers
+      - !type:Wait
+        waitTime: 60s
+      - !type:RemoveTemporaryWalls
+      - !type:Wait
+        waitTime: 2s
+      - !type:ArmNuke
+        nextPhase: enum.MatchPhaseSection.S_EndCurrentPhase
+
+      enum.MatchPhaseSection.End:
+      - !type:Wait
+        waitTime: 1s
+      - !type:DeleteMap
+      - !type:BringPlayersToLobby
+      - !type:DeleteMatch
+        nextPhase: enum.MatchPhaseSection.S_EndCurrentPhase

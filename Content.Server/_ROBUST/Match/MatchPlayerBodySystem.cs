@@ -148,6 +148,7 @@ public sealed partial class TransferMindsToGhosts : IPhase
 
             var mapId = entMan.GetComponent<MapComponent>(map).MapId;
 
+            // todo: do a check to ensure the observer stuff actually exists
             var spawnEnt = entMan.AllComponents<ObserverLocationComponent>().Where(ent => entMan.GetComponent<TransformComponent>(ent.Uid).MapID.Equals(mapId)).Shuffle().First();
             var spawnCords = entMan.GetComponent<TransformComponent>(spawnEnt.Uid).Coordinates;
 

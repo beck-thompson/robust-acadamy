@@ -1,0 +1,178 @@
+- type: startingGear
+  id: RetakesSecGearHoS
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSAlt
+    back: ClothingBackpackSatchelSecurity
+    eyes: ClothingEyesGlassesSecurity
+    mask: ClothingMaskGasSwat
+    ears: ClothingHeadsetSecurity
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitSecurityRed
+    shoes: ClothingShoesBootsJack
+    id: HoSPDA
+    pocket1: WeaponEnergyMagnum
+    pocket2: EmergencyOxygenTankFilled
+    belt: ClothingBeltSecurityFilled
+  storage:
+    back:
+    - MagazinePistolSubMachineGunTopMounted
+    - MagazinePistolSubMachineGunTopMounted
+    - MagazinePistolSubMachineGunTopMounted
+    - MagazinePistolSubMachineGunTopMounted
+    - MedicatedSuture
+    - EmergencyMedipen
+    - Gauze
+    - Crowbar
+    - TelescopicShield
+    - TelescopicShield
+  inhand:
+  - WeaponSubMachineGunWt550
+
+- type: entity
+  parent: MobHuman
+  id: UrstRetakesHOS
+  components:
+  - type: Loadout
+    prototypes:
+    - RetakesSecGearHoS
+
+- type: robustKit
+  id: RobustKitHOS
+  name: Basic secoff (stun)
+  description: A basic secoff kit with stun weapons
+  kit: UrstRetakesHOS
+
+# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
+
+- type: startingGear
+  id: RetakesQMGearSMG
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitQM
+    back: ClothingBackpackSatchelCargo
+    head: ClothingHeadHelmetBasic
+    mask: ClothingMaskBreath
+    ears: ClothingHeadsetQM
+    gloves: ClothingHandsKnuckleDustersQM
+    outerClothing: ClothingOuterArmorBulletproof
+    shoes: ClothingShoesColorBrown
+    id: QuartermasterPDA
+    pocket1: EmergencyMedipen
+    pocket2: EmergencyOxygenTankFilled
+    belt: ClothingBeltUtilityFilled
+  storage:
+    back:
+    - WeaponSubMachineGunWt550
+    - ClothingHeadHelmetBasic
+    - ClothingOuterArmorBulletproof
+    - MagazinePistolSubMachineGunTopMounted
+    - MagazinePistolSubMachineGunTopMounted
+    - MagazinePistolSubMachineGunTopMounted
+    - MagazinePistolSubMachineGunTopMounted
+    - MedicatedSuture
+    - Crowbar
+  inhand:
+  - WeaponSubMachineGunWt550
+
+- type: entity
+  parent: MobHuman
+  id: UrstRetakesQM1
+  components:
+  - type: Loadout
+    prototypes:
+    - RetakesQMGearSMG
+
+- type: robustKit
+  id: RobustKitQM1
+  name: QM kit SMG
+  description: QM kit SMG
+  kit: UrstRetakesQM1
+
+# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
+
+- type: startingGear
+  id: RetakesQMGearShotgun
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitQM
+    back: ClothingBackpackSatchelCargo
+    head: ClothingHeadHelmetBasic
+    mask: ClothingMaskBreath
+    ears: ClothingHeadsetQM
+    gloves: ClothingHandsKnuckleDustersQM
+    outerClothing: ClothingOuterArmorBulletproof
+    shoes: ClothingShoesColorBrown
+    id: QuartermasterPDA
+    pocket1: EmergencyMedipen
+    pocket2: EmergencyOxygenTankFilled
+    belt: ClothingBeltUtilityFilled
+  storage:
+    back:
+    - ClothingOuterArmorBulletproof
+    - ClothingHeadHelmetBasic
+    - BoxLethalshot
+    - BoxLethalshot
+    - BoxLethalshot
+    - BoxLethalshot
+    - MedicatedSuture
+  inhand:
+  - WeaponShotgunEnforcer
+  - WeaponShotgunEnforcer
+
+- type: entity
+  parent: MobHuman
+  id: UrstRetakesQM2
+  components:
+  - type: Loadout
+    prototypes:
+    - RetakesQMGearShotgun
+
+- type: robustKit
+  id: RobustKitQM2
+  name: QM kit shotgun
+  description: QM kit shotgun
+  kit: UrstRetakesQM2
+
+# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #
+
+- type: startingGear
+  id: RetakesQMGearRifle
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitQM
+    back: ClothingBackpackSatchelCargo
+    head: ClothingHeadHelmetBasic
+    mask: ClothingMaskBreath
+    ears: ClothingHeadsetQM
+    gloves: ClothingHandsKnuckleDustersQM
+    outerClothing: ClothingOuterArmorBulletproof
+    shoes: ClothingShoesColorBrown
+    id: QuartermasterPDA
+    pocket1: EmergencyMedipen
+    pocket2: EmergencyOxygenTankFilled
+    belt: ClothingBeltUtilityFilled
+  storage:
+    back:
+    - ClothingOuterArmorBulletproof
+    - ClothingHeadHelmetBasic
+    - MagazineRifle
+    - MagazineRifle
+    - MagazineRifle
+    - MagazineRifle
+    - MedicatedSuture
+  inhand:
+  - WeaponRifleLecter
+  - WeaponRifleLecter
+
+- type: entity
+  parent: MobHuman
+  id: UrstRetakesRetakesQMGearRifle
+  components:
+  - type: Loadout
+    prototypes:
+    - RetakesQMGearRifle
+
+- type: robustKit
+  id: RobustKitQM3
+  name: QM kit rifle
+  description: QM kit rifle
+  kit: UrstRetakesRetakesQMGearRifle
+
+# --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- #

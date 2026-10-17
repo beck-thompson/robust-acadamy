@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Station.Systems;
 using Content.Shared._ROBUST.Match;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map.Components;
@@ -63,6 +64,7 @@ public sealed partial class MatchMapSystem : EntitySystem
     // }
 }
 
+// TODO: rename to CreateGrid or something
 public sealed partial class CreateMap : IPhase
 {
     [DataField]
@@ -99,6 +101,65 @@ public sealed partial class CreateMap : IPhase
         EndPhase(match, entMan);
     }
 }
+
+// Use a map not a grid.
+public sealed partial class CreateMapMap : IPhase
+{
+    [DataField]
+    public string MapName = "defaultMap";
+
+    [DataField]
+    public string? MapPath;
+
+    public override void RunPhase(EntityUid match, IEntityManager entMan)
+    {
+        var mapSystem = entMan.System<SharedMapSystem>();
+        var mapLoader = entMan.System<MapLoaderSystem>();
+        var stationSystem = entMan.System<StationSystem>();
+
+        var comp = entMan.EnsureComponent<MatchMapComponent>(match);
+
+        if (comp.Maps.ContainsKey(MapName) || comp.Grids.ContainsKey(MapName))
+            throw new Exception($"Map {MapName} already exists.");
+
+        var mapPath = MapPath;
+        if (mapPath == null)
+            mapPath = comp.ChosenMap;
+
+        if (mapPath == null)
+            throw new Exception("Map is null! Should not be possible you made a mistake.");
+
+        if (!mapLoader.TryLoadMap(new ResPath(mapPath), out var map, out var grids))
+            throw new Exception("Failed map load.");
+
+        mapSystem.InitializeMap(map.Value.AsNullable(), false);
+
+        mapSystem.SetPaused(map.Value.AsNullable(), false);
+
+        // stolen from station system!
+        EntityUid? largestGrid = null;
+        Box2 largestBounds = new Box2();
+
+        foreach (var gridUid in grids)
+        {
+            if (!entMan.TryGetComponent<MapGridComponent>(gridUid, out var grid) ||
+                grid.LocalAABB.Size.LengthSquared() < largestBounds.Size.LengthSquared())
+                continue;
+
+            largestBounds = grid.LocalAABB;
+            largestGrid = gridUid;
+        }
+
+        if (largestGrid == null)
+            throw new Exception("largest grid is null!");
+
+        comp.Maps.Add(MapName, map.Value);
+        comp.Grids.Add(MapName, largestGrid.Value);
+
+        EndPhase(match, entMan);
+    }
+}
+
 
 // todo: make sure it deletes all the entities on the map as well
 public sealed partial class DeleteMap : IPhase

@@ -1,0 +1,27 @@
+- type: startingGear
+  id: RetakesNukieBasic
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitOperative
+    back: ClothingBackpackDuffelSyndicateFilledStarterKit
+    mask: ClothingMaskGasSyndicate
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitSyndie
+    shoes: ClothingShoesBootsMagSyndie
+    id: SyndiPDA
+    pocket1: DoubleEmergencyOxygenTankFilled
+  inhand:
+  - ClothingOuterHardsuitSyndie
+
+- type: entity
+  parent: MobHuman
+  id: NukieKit1
+  components:
+  - type: Loadout
+    prototypes:
+    - RetakesNukieBasic
+
+- type: robustKit
+  id: RetakeKitNukieBasic
+  name: Basic nukie kit
+  description: nukie kit
+  kit: NukieKit1
