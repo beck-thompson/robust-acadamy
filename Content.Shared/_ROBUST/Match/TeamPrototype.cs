@@ -16,8 +16,8 @@ public sealed partial class TeamPrototype : IPrototype
     public string TeamName = string.Empty;
 
     [DataField]
-    public Color TeamColor = Color.White;
+    public Color? TeamColor = Color.White;
 
     [DataField]
-    public ProtoId<FactionIconPrototype> TeamIcon;
+    public ProtoId<FactionIconPrototype>? TeamIcon;
 }

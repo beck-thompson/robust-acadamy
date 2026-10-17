@@ -104,6 +104,15 @@ public sealed partial class MatchControllerSystem : EntitySystem
             return;
         }
 
+        if (args.MatchProtoId == "RetakeMatch" && players.Count >= 2)
+        {
+            var p = players.Shuffle().ToList();
+            List<ICommonSession> p2 = [p.Pop(), p.Pop()];
+
+            _match.StartMatch(proto.MatchEntProtoId, p2, args.MatchSettings);
+            return;
+        }
+
         _chat.DispatchServerAnnouncement("Could not start match!");
     }
 

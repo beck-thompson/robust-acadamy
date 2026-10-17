@@ -22,3 +22,8 @@
   id: 3v3Match
   matchName: Three Vs Three
   matchEntProtoId: ThreeVsThreeMatch
+
+- type: match
+  id: RetakeMatch
+  matchName: Retakes
+  matchEntProtoId: RetakeGamemode

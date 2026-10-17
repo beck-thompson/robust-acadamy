@@ -1,0 +1,30 @@
+- type: robustRole
+  id: RobustRoleNukieOperative
+  kits:
+  - RetakeKitNukieBasic
+
+
+# security
+
+- type: robustRole
+  id: RobustRoleCrewCommand
+  kits:
+  - RobustKitHOS
+  - RobustKitHOS
+  - RobustKitHOS
+  - RobustKitQM1
+  - RobustKitQM2
+  - RobustKitQM3
+
+- type: robustRole
+  id: RobustRoleCrewSecurity
+  kits:
+  - RobustKitSecStun
+  - RobustKitSecStun2
+
+- type: robustRole
+  id: RobustRoleCrewTider
+  kits:
+  - UrstRetakesArmoryKit1
+  - UrstRetakesArmoryKit2
+  - UrstRetakesArmoryKit3
