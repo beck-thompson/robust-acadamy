@@ -9,8 +9,6 @@
     shoes: ClothingShoesBootsMagSyndie
     id: SyndiPDA
     pocket1: DoubleEmergencyOxygenTankFilled
-  inhand:
-  - ClothingOuterHardsuitSyndie
 
 - type: entity
   parent: MobHuman
